@@ -2,21 +2,11 @@
 
 //If two numbers in the argument array have the same number of digits,
 //return the first one in the array.
-
 function findLongest(array) {
-  let longest = 0;
-  //store longest in var
-
-  //use for loop to find longest
-
-  for (var i = 0; i < array.length; i++) {
-    if (array[i] > longest) {
-      longest = 0;
-      longest = array[i];
-    }
-  }
-  return longest;
-  // code here
+  let newArr = array
+    .slice()
+    .sort((a, b) => b.toString().length - a.toString().length);
+  return newArr[0];
 }
 
 //Test.assertEquals(findLongest([1, 10, 100]), 100)
